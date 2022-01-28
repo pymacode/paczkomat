@@ -17,20 +17,20 @@
             <p class="header__paragraph">Rozpocznij klikając w przycisk.</p>
         </header>
         <main class="main">
-            <form class="form hidden">
+            <form class="form">
                 <div class="form__row">
-                    <label>
+                    <label class="form__label">
                         Numer telefonu<br />
-                        <input class="form__input" type="text" name="number" />
+                        <input class="form__input form__input--number" type="text" name="number" />
                     </label>
-                    <label>
+                    <label class="form__label">
                         Kod odbioru<br />
-                        <input class="form__input" type="text" name="kod" />
+                        <input class="form__input form__input--code" type="text" name="code" />
                     </label>
                 </div>
                 <button class="styled-button form__button">Odbierz paczkę</button>
             </form>
-            <button class="styled-button main__button">Odbierz paczkę</button>
+            <button class="styled-button main__button hidden">Odbierz paczkę</button>
 
             <div class="modal hidden">
                 <h1 class="modal__title">Paczka odebrana!</h1>
