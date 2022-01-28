@@ -19,29 +19,28 @@
         <main class="main">
             <form class="form hidden">
                 <div class="form__row">
-                    <label>
+                    <label class="form__label">
                         Numer telefonu<br />
-                        <input class="form__input" type="text" name="number" />
+                        <input class="form__input form__input--number" type="text" name="number" />
                     </label>
-                    <label>
+                    <label class="form__label">
                         Kod odbioru<br />
-                        <input class="form__input" type="text" name="kod" />
+                        <input class="form__input form__input--code" type="text" name="code" />
                     </label>
                 </div>
                 <button class="styled-button form__button">Odbierz paczkę</button>
             </form>
-            <button class="styled-button main__button">Odbierz paczkę</button>
-
-            <div class="modal hidden">
-                <h1 class="modal__title">Paczka odebrana!</h1>
-                <p class="modal__description">Zrobiłeś to w czasie 10 sekund! Czy możemy zrobić dla Ciebie coś jeszcze?
-                </p>
-                <section class="modal__buttons">
-                    <button class="modal__button modal__buttons--done">To wszystko na dziś</button>
-                    <button class="modal__button modal__buttons--next">Odbierz kolejną paczkę</button>
-                </section>
-            </div>
+            <button class="styled-button main__button hidden">Odbierz paczkę</button>
         </main>
+    </div>
+    <div class="modal">
+        <h1 class="modal__title">Paczka odebrana!</h1>
+        <p class="modal__description">Zrobiłeś to w czasie 10 sekund! Czy możemy zrobić dla Ciebie coś jeszcze?
+        </p>
+        <section class="modal__buttons">
+            <button class="modal__button modal__buttons--done">To wszystko na dziś</button>
+            <button class="modal__button modal__buttons--next">Odbierz kolejną paczkę</button>
+        </section>
     </div>
 </body>
 
