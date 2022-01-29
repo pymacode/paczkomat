@@ -1,3 +1,6 @@
+
+import { validateForm } from "./validation.js";
+
 export function toggleClass(elementClass, classToToggle = 'hidden') {
     return document.querySelector(elementClass).classList.toggle(classToToggle);
 };
@@ -13,12 +16,15 @@ export function changeViewToForm() {
 
 export function changeViewToModal(e) {
     e.preventDefault();
-    blurElement('.wrapper');
-    toggleClass('.loader');
-    setTimeout(() => {
+    if (!validateForm()) return;
+    else {
+        blurElement('.wrapper');
         toggleClass('.loader');
-        toggleClass('.modal');
-    }, 1500);
+        setTimeout(() => {
+            toggleClass('.loader');
+            toggleClass('.modal');
+        }, 1500);
+    }
 }
 
 export function changeViewToStart() {
