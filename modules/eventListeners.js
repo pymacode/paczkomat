@@ -1,3 +1,4 @@
+import { validateForm } from "./validation.js";
 import { changeViewToForm, changeViewToModal, changeViewToStart, changeViewToFormFromModal } from "./views.js";
 
 const startButton = document.querySelector('.main__button');

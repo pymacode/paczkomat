@@ -21,14 +21,20 @@
                 <div class="form__row">
                     <label class="form__label">
                         Numer telefonu<br />
-                        <input class="form__input form__input--number" type="text" name="number" />
+                        <input class="form__input form__input--number" type="text" name="number" maxlength="9" />
+                        <p class='form__error number--error hidden'>
+                            Length 9 - only numbers.
+                        </p>
                     </label>
                     <label class="form__label">
                         Kod odbioru<br />
-                        <input class="form__input form__input--code" type="text" name="code" />
+                        <input class="form__input form__input--code" type="text" name="code" maxlength="4" />
+                        <p class='form__error code--error hidden '>
+                            Length 4 - only numbers.
+                        </p>
                     </label>
                 </div>
-                <button class="styled-button form__button">Odbierz paczkę</button>
+                <button class="styled-button form__button" disabled>Odbierz paczkę</button>
             </form>
             <button class="styled-button main__button">Odbierz paczkę</button>
         </main>
@@ -42,6 +48,7 @@
             <button class="modal__button modal__button--next">Odbierz kolejną paczkę</button>
         </section>
     </div>
+    <div class="loader hidden"></div>
 
     <script type="module" src="main.js"></script>
 </body>
