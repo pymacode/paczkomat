@@ -1,13 +1,6 @@
 
 import { validateForm } from "./validation.js";
-
-export function toggleClass(elementClass, classToToggle = 'hidden') {
-    return document.querySelector(elementClass).classList.toggle(classToToggle);
-};
-export function blurElement(elementClass) {
-    document.querySelector(elementClass).classList.toggle('blurred');
-}
-
+import { toggleClass, blurElement } from "./utils.js";
 
 export function changeViewToForm() {
     toggleClass('.main__button');
@@ -23,7 +16,7 @@ export function changeViewToModal(e) {
         setTimeout(() => {
             toggleClass('.loader');
             toggleClass('.modal');
-        }, 1500);
+        }, 1000);
     }
 }
 
