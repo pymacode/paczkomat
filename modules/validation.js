@@ -1,3 +1,4 @@
+import { addClassToElement, removeClassFromElement, clearInputsValue } from "./utils.js";
 const numberField = document.querySelector('.form__input--number');
 const codeField = document.querySelector('.form__input--code');
 
@@ -13,11 +14,11 @@ function markField(field, isMarked) {
     unlockButton();
     if (isMarked) {
         field.classList.add('field-error');
-        document.querySelector(`.${field.name}--error`).classList.remove('hidden');
+        removeClassFromElement(`.${field.name}--error`, 'hidden');
     }
     else {
         field.classList.remove('field-error');
-        document.querySelector(`.${field.name}--error`).classList.add('hidden');
+        addClassToElement(`.${field.name}--error`, 'hidden');
     }
 }
 
@@ -28,10 +29,6 @@ function unlockButton() {
     } else {
         document.querySelector('.form__button').disabled = false;
     }
-}
-
-function clearInputsValue(inputs) {
-    inputs.map(input => input.value = '');
 }
 
 numberField.addEventListener('input', e => markField(e.target, !numberFieldTest(e.target)));
