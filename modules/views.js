@@ -1,29 +1,36 @@
-const mainContainer = document.querySelector('.main');
-
-export function switchClass(elementClass) {
-    return document.querySelector(elementClass).classList.toggle('hidden');
+export function toggleClass(elementClass, classToToggle = 'hidden') {
+    return document.querySelector(elementClass).classList.toggle(classToToggle);
 };
+export function blurElement(elementClass) {
+    document.querySelector(elementClass).classList.toggle('blurred');
+}
 
 
 export function changeViewToForm() {
-    switchClass('.main__button');
-    switchClass('.form');
+    toggleClass('.main__button');
+    toggleClass('.form');
 }
 
 export function changeViewToModal(e) {
     e.preventDefault();
-    //Space for loader
-    setTimeout(() => switchClass('.modal'), 1500);
+    blurElement('.wrapper');
+    toggleClass('.loader');
+    setTimeout(() => {
+        toggleClass('.loader');
+        toggleClass('.modal');
+    }, 1500);
 }
 
 export function changeViewToStart() {
-    switchClass('.modal');
-    switchClass('.form');
-    switchClass('.main__button');
+    blurElement('.wrapper')
+    toggleClass('.modal');
+    toggleClass('.form');
+    toggleClass('.main__button');
 }
 
 export function changeViewToFormFromModal() {
-    switchClass('.modal');
+    blurElement('.wrapper')
+    toggleClass('.modal');
 }
 
 
