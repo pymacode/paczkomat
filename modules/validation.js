@@ -44,8 +44,3 @@ export function validateForm() {
     }
 
 }
-
-Window.validation = {
-    numberFieldTest,
-    codeFieldTest
-}
